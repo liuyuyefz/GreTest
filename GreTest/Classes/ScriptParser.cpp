@@ -16,7 +16,8 @@
 #include<vector>
 #include<string>
 #include<cstdio>
-
+#include <sstream>
+#include <iostream>
 
 #define rate1 1.0
 #define rate2 1.0
@@ -129,6 +130,47 @@ vector<string> ScriptParser::traversingMap(map<string, string> aMap)
     return aVect;
 }
 
+vector<string > ScriptParser::getTxtFromXml(string className,std::string mapName)
+{
+    string detailStr = ScriptParser::readScript(className);
+    
+    vector<string > aVect;
+    
+    string pattern1("<title>");
+    
+    vector<string>ivec1 =  PersonalApiCplu::split(detailStr,pattern1);
+    
+    for (int j = 1;j<ivec1.size(); j++)
+    {
+        vector<string> tempIvec;
+        
+        string sourceStr = ivec1[j];
+        
+        string patternStr = mapName;
+
+        if (PersonalApiCplu::isContantString(sourceStr,patternStr))
+        {
+            string pattern2("<key>");
+            vector<string>ivec2 =  PersonalApiCplu::split(ivec1[j],pattern2);
+            for (int i = 1;i<ivec2.size(); i++)
+            {
+                string pattern3("</key>");//去尾
+                vector<string>ivec3 =  PersonalApiCplu::split(ivec2[i],pattern3);
+                
+                string pattern4("<string>");//去头
+                vector<string>ivec4 =  PersonalApiCplu::split(ivec3[1],pattern4);
+                
+                string pattern5("</string>");//去尾
+                vector<string>ivec5 =  PersonalApiCplu::split(ivec4[1],pattern5);
+                
+                aVect[atoi(ivec3[0].c_str())]=ivec5[0];
+            }
+        }
+    }
+
+    return aVect;
+}
+
 CCPoint ScriptParser::getPositionFromPlist(CCDictionary * plistDictionary,const std::string& positionName)
 {
    
@@ -141,7 +183,16 @@ CCPoint ScriptParser::getPositionFromPlist(CCDictionary * plistDictionary,const 
     return point;
 }
 
-
+CCSize ScriptParser::getSizeFromPlist(CCDictionary * plistDictionary,const std::string& sizeName)
+{
+    CCDictionary* sizeDic = dynamic_cast<CCDictionary*>(plistDictionary->objectForKey("size"));
+    CCDictionary* sizeNameDic = dynamic_cast<CCDictionary*>(sizeDic->objectForKey(sizeName));
+    CCString* width = dynamic_cast<CCString*>(sizeNameDic->objectForKey("width"));
+    CCString* height = dynamic_cast<CCString*>(sizeNameDic->objectForKey("height"));
+    CCSize size = CCSizeMake(width->floatValue()/rate1, height->floatValue()/rate2);
+    
+    return size;
+}
 
 
 

@@ -11,6 +11,13 @@
 			<key>y</key>
 			<string>1452</string>
 		</dict>
+		<key>tableView</key>
+		<dict>
+			<key>x</key>
+			<string>1877</string>
+			<key>y</key>
+			<string>549</string>
+		</dict>
 		<key>pPencilIcon</key>
 		<dict>
 			<key>x</key>
@@ -32,43 +39,42 @@
 			<key>y</key>
 			<string>60</string>
 		</dict>
+		<key>pPencilIconLabel</key>
+		<dict>
+			<key>x</key>
+			<string>804</string>
+			<key>y</key>
+			<string>15</string>
+		</dict>
+		<key>pDocumentIconLabel</key>
+		<dict>
+			<key>x</key>
+			<string>1024</string>
+			<key>y</key>
+			<string>15</string>
+		</dict>
+		<key>pSettingsIconActiveLabel</key>
+		<dict>
+			<key>x</key>
+			<string>1244</string>
+			<key>y</key>
+			<string>15</string>
+		</dict>
 	</dict>
-	<key>batch</key>
-	<array>
-		<string>s16Dog1</string>
-		<string>s16Dog2</string>
-	</array>
-	<key>mov</key>
+	<key>size</key>
 	<dict>
-		<key>mov1</key>
-		<string>s16a.mov</string>
-		<key>mov2</key>
-		<string>s16b.mov</string>
+		<key>tableView</key>
+		<dict>
+			<key>width</key>
+			<string>1877</string>
+			<key>htight</key>
+			<string>549</string>
+		</dict>
 	</dict>
 	<key>sound</key>
 	<dict>
 		<key>bgSound1</key>
 		<string>u1bgmusic.mp3</string>
-	</dict>
-	<key>image</key>
-	<dict>
-		<key>bg1</key>
-		<string>s16bg.png</string>
-		<key>leadingRole</key>
-		<string>s16dogtail1.png</string>
-		<key>answerWrongAct</key>
-		<string>s16doghead2.png</string>
-		<key>board1</key>
-		<string>pu3car.png</string>
-		<key>board2</key>
-		<string>pu3motorcycle.png</string>
-		<key>word</key>
-		<string>s16word.png</string>
-	</dict>
-	<key>particle</key>
-	<dict>
-		<key>particle1</key>
-		<string>s15Particle1.plist</string>
 	</dict>
 </dict>
 </plist>

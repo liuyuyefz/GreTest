@@ -326,29 +326,7 @@ void S11PrepareRes::menuCloseCallback(CCObject* pSender)
 }
 void S11PrepareRes::menuselect(CCObject* pSender)
 {
-    CCMenuItemSprite * aItem = (CCMenuItemSprite *)pSender;
-    
-    if (aItem==m_practiceItem)
-    {
-        CCScene *newScene = CCScene::create();
-        
-        newScene->addChild(S1Main::create());
-
-        CCDirector::sharedDirector()->replaceScene(newScene);//动画过场
-
-    }
-    if (aItem==m_prepareItem)
-    {
-        
-    }
-    if (aItem==m_setting)
-    {
-        CCScene *newScene = CCScene::create();
-        
-        newScene->addChild(pSetting::create());
-        
-        CCDirector::sharedDirector()->replaceScene(newScene);//动画过场
-    }
+    ;
 }
 
 

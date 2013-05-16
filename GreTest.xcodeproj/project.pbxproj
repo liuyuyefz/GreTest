@@ -14,8 +14,6 @@
 		680CB9371742613A0000AAC2 /* S3PracticeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 680CB9301742613A0000AAC2 /* S3PracticeScene.cpp */; };
 		680CB9381742613A0000AAC2 /* S3TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 680CB9321742613A0000AAC2 /* S3TestScene.cpp */; };
 		680CB9451742730F0000AAC2 /* Psetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 680CB9441742730F0000AAC2 /* Psetting.plist */; };
-		680E0687173936EF005C602D /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = 680E0685173936EF005C602D /* ipad */; };
-		680E0688173936EF005C602D /* ipadhd in Resources */ = {isa = PBXBuildFile; fileRef = 680E0686173936EF005C602D /* ipadhd */; };
 		680E068C173948C8005C602D /* s11TableCellTxt1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 680E0689173948C7005C602D /* s11TableCellTxt1.txt */; };
 		680E068D173948C8005C602D /* s11TableCellTxt2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 680E068A173948C7005C602D /* s11TableCellTxt2.txt */; };
 		680E068E173948C8005C602D /* s11TableCellTxt3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 680E068B173948C8005C602D /* s11TableCellTxt3.txt */; };
@@ -242,6 +240,10 @@
 		689B27DD1716FE8D00FEBDC8 /* PersonalApiCplu.mm in Sources */ = {isa = PBXBuildFile; fileRef = 689B27D31716FE8D00FEBDC8 /* PersonalApiCplu.mm */; };
 		689B27DE1716FE8D00FEBDC8 /* S1MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 689B27D51716FE8D00FEBDC8 /* S1MainScene.cpp */; };
 		689C00EF171D98E3003A8020 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 689C00EE171D98E3003A8020 /* Default-568h@2x.png */; };
+		68A442E31745392400FEAB5E /* TableBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68A442E11745392400FEAB5E /* TableBar.cpp */; };
+		68A442EA17454C1300FEAB5E /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = 68A442E817454C1300FEAB5E /* ipad */; };
+		68A442EB17454C1300FEAB5E /* ipadhd in Resources */ = {isa = PBXBuildFile; fileRef = 68A442E917454C1300FEAB5E /* ipadhd */; };
+		68A442ED174567FB00FEAB5E /* Psetting.xml in Resources */ = {isa = PBXBuildFile; fileRef = 68A442EC174567FB00FEAB5E /* Psetting.xml */; };
 		68F6714B1726DBEC007A69FF /* CustomTableViewCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68F671491726DBEC007A69FF /* CustomTableViewCell.cpp */; };
 /* End PBXBuildFile section */
 
@@ -258,8 +260,6 @@
 		680CB9321742613A0000AAC2 /* S3TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = S3TestScene.cpp; path = Classes/S3TestScene.cpp; sourceTree = "<group>"; };
 		680CB9331742613A0000AAC2 /* S3TestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3TestScene.h; path = Classes/S3TestScene.h; sourceTree = "<group>"; };
 		680CB9441742730F0000AAC2 /* Psetting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Psetting.plist; path = Classes/Psetting.plist; sourceTree = "<group>"; };
-		680E0685173936EF005C602D /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = Resources/ipad; sourceTree = "<group>"; };
-		680E0686173936EF005C602D /* ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipadhd; path = Resources/ipadhd; sourceTree = "<group>"; };
 		680E0689173948C7005C602D /* s11TableCellTxt1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = s11TableCellTxt1.txt; path = Classes/s11TableCellTxt1.txt; sourceTree = "<group>"; };
 		680E068A173948C7005C602D /* s11TableCellTxt2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = s11TableCellTxt2.txt; path = Classes/s11TableCellTxt2.txt; sourceTree = "<group>"; };
 		680E068B173948C8005C602D /* s11TableCellTxt3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = s11TableCellTxt3.txt; path = Classes/s11TableCellTxt3.txt; sourceTree = "<group>"; };
@@ -750,6 +750,11 @@
 		689B27D61716FE8D00FEBDC8 /* S1MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S1MainScene.h; path = Classes/S1MainScene.h; sourceTree = "<group>"; };
 		689B27D81716FE8D00FEBDC8 /* S5CompositionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S5CompositionScene.h; path = Classes/S5CompositionScene.h; sourceTree = "<group>"; };
 		689C00EE171D98E3003A8020 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		68A442E11745392400FEAB5E /* TableBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TableBar.cpp; path = Classes/TableBar.cpp; sourceTree = "<group>"; };
+		68A442E21745392400FEAB5E /* TableBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableBar.h; path = Classes/TableBar.h; sourceTree = "<group>"; };
+		68A442E817454C1300FEAB5E /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = Resources/ipad; sourceTree = "<group>"; };
+		68A442E917454C1300FEAB5E /* ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipadhd; path = Resources/ipadhd; sourceTree = "<group>"; };
+		68A442EC174567FB00FEAB5E /* Psetting.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Psetting.xml; path = Classes/Psetting.xml; sourceTree = "<group>"; };
 		68F671491726DBEC007A69FF /* CustomTableViewCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CustomTableViewCell.cpp; path = Classes/CustomTableViewCell.cpp; sourceTree = "<group>"; };
 		68F6714A1726DBEC007A69FF /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewCell.h; path = Classes/CustomTableViewCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -823,8 +828,8 @@
 		689B24ED1716FD5100FEBDC8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				680E0685173936EF005C602D /* ipad */,
-				680E0686173936EF005C602D /* ipadhd */,
+				68A442E817454C1300FEAB5E /* ipad */,
+				68A442E917454C1300FEAB5E /* ipadhd */,
 				689B24EE1716FD5100FEBDC8 /* CloseNormal.png */,
 				689B24F01716FD5100FEBDC8 /* CloseSelected.png */,
 				689B24F21716FD5100FEBDC8 /* Default.png */,
@@ -1788,13 +1793,16 @@
 				681F5C771733B484003BC468 /* S11PrepareResScene.h */,
 				680E068F1739532E005C602D /* S11FullScreenScene.cpp */,
 				680E06901739532E005C602D /* S11FullScreenScene.h */,
+				6801214C1729505A0078EE08 /* S5CompositionScene.ccp.mm */,
+				689B27D81716FE8D00FEBDC8 /* S5CompositionScene.h */,
 				681F5C741733B483003BC468 /* pSettingScene.cpp */,
 				681F5C751733B483003BC468 /* pSettingScene.h */,
 				680CB9441742730F0000AAC2 /* Psetting.plist */,
+				68A442EC174567FB00FEAB5E /* Psetting.xml */,
+				68A442E11745392400FEAB5E /* TableBar.cpp */,
+				68A442E21745392400FEAB5E /* TableBar.h */,
 				681F5C7E1733DAAE003BC468 /* ScriptParser.cpp */,
 				681F5C7F1733DAAE003BC468 /* ScriptParser.h */,
-				6801214C1729505A0078EE08 /* S5CompositionScene.ccp.mm */,
-				689B27D81716FE8D00FEBDC8 /* S5CompositionScene.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1866,12 +1874,13 @@
 				689B27B71716FD5600FEBDC8 /* cocos2dx-ext_public.defines.txt in Resources */,
 				689C00EF171D98E3003A8020 /* Default-568h@2x.png in Resources */,
 				681F5C7D1733B8D6003BC468 /* S11PrepareRes.xml in Resources */,
-				680E0687173936EF005C602D /* ipad in Resources */,
-				680E0688173936EF005C602D /* ipadhd in Resources */,
 				680E068C173948C8005C602D /* s11TableCellTxt1.txt in Resources */,
 				680E068D173948C8005C602D /* s11TableCellTxt2.txt in Resources */,
 				680E068E173948C8005C602D /* s11TableCellTxt3.txt in Resources */,
 				680CB9451742730F0000AAC2 /* Psetting.plist in Resources */,
+				68A442EA17454C1300FEAB5E /* ipad in Resources */,
+				68A442EB17454C1300FEAB5E /* ipadhd in Resources */,
+				68A442ED174567FB00FEAB5E /* Psetting.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2085,6 +2094,7 @@
 				680CB9361742613A0000AAC2 /* S2TestScene.cpp in Sources */,
 				680CB9371742613A0000AAC2 /* S3PracticeScene.cpp in Sources */,
 				680CB9381742613A0000AAC2 /* S3TestScene.cpp in Sources */,
+				68A442E31745392400FEAB5E /* TableBar.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
