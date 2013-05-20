@@ -7,13 +7,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "GreTest/Classes/pSettingScene.cpp"
-         timestampString = "390428128.827283"
+         filePath = "GreTest/libs/extensions/GUI/CCScrollView/CCTableView.cpp"
+         timestampString = "390709195.787939"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
-         landmarkName = "pSetting::init()"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
+         landmarkName = "CCTableView::initWithViewSize(CCSize size, CCNode* container/* = NULL*/)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -20,7 +20,7 @@
 #define rate1 1.0
 #define rate2 1.0
 
-#define classPlistName_macro "Psetting.plist"
+#define classPlistName_macro "Psetting"
 #define titleLabelStr_macro "设置"
 #define s1FontName_macro "Thonburi"
 #define s1TitleFontSize_macro 40
@@ -61,7 +61,9 @@ bool pSetting::init()
     _menu->setPosition(CCPointZero);
     this->addChild(_menu, zNum);
 
-    plistDic = CCDictionary::createWithContentsOfFile(classPlistName_macro);
+    string plistStr = classPlistName_macro;
+    plistStr += ".plist";
+    plistDic = CCDictionary::createWithContentsOfFile(plistStr.c_str());
     
     //main logic
 
@@ -87,23 +89,20 @@ bool pSetting::init()
     
     aTTFStrMap = ScriptParser::paserScript(classPlistName_macro,"tableView");
     
-    CCTableView* pTableView = CCTableView::create(this, CCSizeMake(100, 100));//ScriptParser::getSizeFromPlist(plistDic,"tableView"));
-    pTableView->setDirection(kCCScrollViewDirectionVertical);
-    pTableView->setPosition(ScriptParser::getPositionFromPlist(plistDic,"tableView"));
-    pTableView->setDelegate(this);
-    //   设置顺序是自上往下
-    pTableView->setVerticalFillOrder(kCCTableViewFillTopDown);
-    this->addChild(pTableView,1);
-    pTableView->reloadData();
-    
-    //tableBar
+    CCTableView * tableView = CCTableView::create(this, ScriptParser::getSizeFromPlist(plistDic,"tableView"));
+    tableView->setAnchorPoint(ccp(0.5,0.5));
+    tableView->setDirection(kCCScrollViewDirectionVertical);
+    tableView->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2));//ScriptParser::getPositionFromPlist(plistDic,"tableView"));
+    tableView->setDelegate(this);
+    tableView->setVerticalFillOrder(kCCTableViewFillTopDown);
+    this->addChild(tableView,99);
+    tableView->reloadData();
+
+    //setUpTableBar
     TableBar::classPlistName = classPlistName_macro;
     TableBar::mainItemNum = 2;
-
-    TableBar::itemVec.push_back("pPencilIcon");
-    TableBar::itemVec.push_back("pDocumentIcon");
-    TableBar::itemVec.push_back("pSettingsIconActive");
-
+    TableBar::itemVec = ScriptParser::getImageFromPlist(plistDic,"tableView");
+    
     TableBar::itemTitleVec.push_back("GRE模考");
     TableBar::itemTitleVec.push_back("备考资料");
     TableBar::itemTitleVec.push_back("设置");
@@ -133,16 +132,21 @@ CCTableViewCell* pSetting::tableCellAtIndex(CCTableView *table, unsigned int idx
         cell = new CustomTableViewCell();
         cell->autorelease();
 
-        CCLabelTTF *label = CCLabelTTF::create("点击输入", "Helvetica", 30.0);
+        CCLabelTTF *label = CCLabelTTF::create("", "Helvetica", 30.0);
         label->setPosition(CCPointZero);
-        // int to String
-        ostringstream oss;
-        oss<<idx;
-        const char * labelStr = aTTFStrMap[oss.str()].c_str();
+        label->setColor(ccBLACK);
+        const char * labelStr = "";
         label->setString(labelStr);
         label->setAnchorPoint(CCPointZero);
         label->setTag(123);
-        cell->addChild(label);
+        cell->addChild(label,zNum);
+        
+        CCSprite *pSprite = CCSprite::create("s11CellDivideLine.png");
+        pSprite->setAnchorPoint(CCPointZero);
+		pSprite->setPosition(CCPointZero);
+        cell->addChild(pSprite,zNum);
+        //pSprite->setScaleY(table->getContentSize().width/pSprite->getContentSize().width);
+        //pSprite->setContentSize(CCSizeMake(pSprite->getContentSize().width, table->getContentSize().height));
         
         if (idx==0)
         {

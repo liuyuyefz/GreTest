@@ -10,7 +10,6 @@
 
 #include "PersonalApiCplu.h"
 #include "cocos2d.h"
-//#include "CCTMXXMLParser.h"
 
 #include<map>
 #include<vector>
@@ -30,7 +29,6 @@ using namespace cocos2d;
 string ScriptParser::readScript(string fileName)
 {
     std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename(fileName.c_str());
-    CCLOG("%s",path.c_str());
     FILE *fp =fopen(path.c_str(),"r");//根据路径打开文件
     
     char *pchBuf = NULL;//将要取得的字符串
@@ -59,7 +57,7 @@ string ScriptParser::readScript(string fileName)
     
     return detailStr;
 }
-
+//TODO just demo coding
 CCDictionary* ScriptParser::readPlist(string fileName)
 {
     //const char* testPlistPath = "Psetting.plist";//"BSPlistDatas\\Psetting.plist";
@@ -78,8 +76,8 @@ CCDictionary* ScriptParser::readPlist(string fileName)
 
 map<string, string> ScriptParser::paserScript(string className,string mapName)
 {
+    className += ".xml";
     string detailStr = ScriptParser::readScript(className);
-
     map<string, string> aMap;
     
     string pattern1("<title>");
@@ -115,7 +113,7 @@ map<string, string> ScriptParser::paserScript(string className,string mapName)
         }
     }
 
-    ScriptParser::traversingMap(aMap);
+    //ScriptParser::traversingMap(aMap);
     return aMap;
 }
 vector<string> ScriptParser::traversingMap(map<string, string> aMap)
@@ -130,48 +128,8 @@ vector<string> ScriptParser::traversingMap(map<string, string> aMap)
     return aVect;
 }
 
-vector<string > ScriptParser::getTxtFromXml(string className,std::string mapName)
-{
-    string detailStr = ScriptParser::readScript(className);
-    
-    vector<string > aVect;
-    
-    string pattern1("<title>");
-    
-    vector<string>ivec1 =  PersonalApiCplu::split(detailStr,pattern1);
-    
-    for (int j = 1;j<ivec1.size(); j++)
-    {
-        vector<string> tempIvec;
-        
-        string sourceStr = ivec1[j];
-        
-        string patternStr = mapName;
 
-        if (PersonalApiCplu::isContantString(sourceStr,patternStr))
-        {
-            string pattern2("<key>");
-            vector<string>ivec2 =  PersonalApiCplu::split(ivec1[j],pattern2);
-            for (int i = 1;i<ivec2.size(); i++)
-            {
-                string pattern3("</key>");//去尾
-                vector<string>ivec3 =  PersonalApiCplu::split(ivec2[i],pattern3);
-                
-                string pattern4("<string>");//去头
-                vector<string>ivec4 =  PersonalApiCplu::split(ivec3[1],pattern4);
-                
-                string pattern5("</string>");//去尾
-                vector<string>ivec5 =  PersonalApiCplu::split(ivec4[1],pattern5);
-                
-                aVect[atoi(ivec3[0].c_str())]=ivec5[0];
-            }
-        }
-    }
-
-    return aVect;
-}
-
-CCPoint ScriptParser::getPositionFromPlist(CCDictionary * plistDictionary,const std::string& positionName)
+CCPoint ScriptParser::getPositionFromPlist(CCDictionary * plistDictionary,const string& positionName)
 {
    
     CCDictionary* positionDic = dynamic_cast<CCDictionary*>(plistDictionary->objectForKey("position"));
@@ -183,7 +141,7 @@ CCPoint ScriptParser::getPositionFromPlist(CCDictionary * plistDictionary,const 
     return point;
 }
 
-CCSize ScriptParser::getSizeFromPlist(CCDictionary * plistDictionary,const std::string& sizeName)
+CCSize ScriptParser::getSizeFromPlist(CCDictionary * plistDictionary,const string& sizeName)
 {
     CCDictionary* sizeDic = dynamic_cast<CCDictionary*>(plistDictionary->objectForKey("size"));
     CCDictionary* sizeNameDic = dynamic_cast<CCDictionary*>(sizeDic->objectForKey(sizeName));
@@ -194,5 +152,17 @@ CCSize ScriptParser::getSizeFromPlist(CCDictionary * plistDictionary,const std::
     return size;
 }
 
-
+vector<string> ScriptParser::getImageFromPlist(cocos2d::CCDictionary * plistDictionary,const string& imageSectionName)
+{
+    CCDictionary* sizeDic = dynamic_cast<CCDictionary*>(plistDictionary->objectForKey("image"));
+    CCDictionary* sizeNameDic = dynamic_cast<CCDictionary*>(sizeDic->objectForKey(imageSectionName));
+    CCArray * allKey = sizeNameDic->allKeys();
+    vector<string>allValue;
+    for (int i = 0; i<allKey->count(); i++)
+    {
+        CCString * key = (CCString * )allKey->objectAtIndex(i);
+        allValue.push_back(sizeNameDic->valueForKey(key->getCString())->getCString());
+    }
+    return allValue;
+}
 

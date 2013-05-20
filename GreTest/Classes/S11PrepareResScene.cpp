@@ -92,10 +92,8 @@ bool S11PrepareRes::init()
     
     titleString = "";
     
-	scriptMap=ScriptParser::paserScript("S11PrepareRes.xml","leftTitle");//right_TableView_Map
+	scriptMap=ScriptParser::paserScript("S11PrepareRes","leftTitle");//right_TableView_Map
 
- 
-    
     //背景图
     
     {

@@ -26,12 +26,12 @@ public:
     static std::map<std::string, std::string> paserScript(std::string className,std::string mapName);
     
     static std::vector<std::string> traversingMap(std::map<std::string, std::string> aMap);
-
-    static std::vector<std::string > getTxtFromXml(std::string className,std::string mapName);
     
     static cocos2d::CCPoint getPositionFromPlist(cocos2d::CCDictionary * plistDictionary,const std::string& positionName);
     
     static cocos2d::CCSize getSizeFromPlist(cocos2d::CCDictionary * plistDictionary,const std::string& sizeName);
+    
+    static std::vector<std::string> getImageFromPlist(cocos2d::CCDictionary * plistDictionary,const std::string& imageSectionName);
 };
 
 #endif /* defined(__GreTest__ScriptParser__) */

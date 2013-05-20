@@ -70,9 +70,10 @@ bool TableBar::init()
     
     m_highlightSp = CCSprite::create("pTabBarSelectedHighlight.png");
 
-    
-    const char * classPlistNameStr = TableBar::classPlistName.c_str();
-    plistDic = CCDictionary::createWithContentsOfFile(classPlistNameStr);
+
+    string plistStr = TableBar::classPlistName;
+    plistStr += ".plist";
+    plistDic = CCDictionary::createWithContentsOfFile(plistStr.c_str());
     
     for (int i = 0; i<itemVec.size(); i++)
     {
@@ -96,7 +97,6 @@ bool TableBar::init()
         
         const char * itemTitleStr = itemTitleVec[i].c_str();
         CCLabelTTF* pLabel = CCLabelTTF::create(itemTitleStr,fontName_macro,fontSize_macro);
-        CCLog("i==%d;mainItemNum=%d",i,TableBar::mainItemNum);
         if (i == TableBar::mainItemNum)
         {
             pLabel->setColor(White_macro);
